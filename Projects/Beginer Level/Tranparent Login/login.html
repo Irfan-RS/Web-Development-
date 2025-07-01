@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="full-screen-container">
+         <div class="login-container">
+            <h1 class="login-title">Welcome</h1>
+            <form class="form" id="login-form">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                    <span class="msg">Valid email</span>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password">
+                    <span class="msg">Incorrect password</span>
+                </div>
+                <button type="submit" class="login-button">Login</button>
+                <p style="text-align:center; margin-top:10px; color:white;">Don't have an account? <a href="#" id="show-signup" style="color:#90caf9;">Sign up</a></p>
+            </form>
+            <form class="form" id="signup-form" style="display:none;">
+                <div class="input-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" name="signup-email" id="signup-email">
+                </div>
+                <div class="input-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" name="signup-password" id="signup-password">
+                </div>
+                <div class="input-group">
+                    <label for="signup-confirm-password">Confirm Password</label>
+                    <input type="password" name="signup-confirm-password" id="signup-confirm-password">
+                </div>
+                <button type="submit" class="login-button">Sign Up</button>
+                <p style="text-align:center; margin-top:10px; color:white;">Already have an account? <a href="#" id="show-login" style="color:#90caf9;">Login</a></p>
+            </form>
+         </div>
+    </div>
+    <script>
+    // Toggle between login and signup forms
+    document.getElementById('show-signup').onclick = function(e) {
+        e.preventDefault();
+        document.getElementById('login-form').style.display = 'none';
+        document.getElementById('signup-form').style.display = 'flex';
+    };
+    document.getElementById('show-login').onclick = function(e) {
+        e.preventDefault();
+        document.getElementById('signup-form').style.display = 'none';
+        document.getElementById('login-form').style.display = 'flex';
+    };
+    </script>
+</body>
+</html>
